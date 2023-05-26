@@ -1,0 +1,19 @@
+.btn{
+
+    width: 100%;
+
+}
+
+label{
+ font-family: "Nunito", sans-serif;
+ font-weight: bold;
+ font-size: medium;
+}
+
+small {
+    font-size: 15px;
+    padding: 7px;
+    color: rgb(185, 18, 18);
+    font-weight: bold;
+}
+

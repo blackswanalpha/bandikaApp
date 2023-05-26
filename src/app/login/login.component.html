@@ -1,0 +1,79 @@
+
+<app-nav></app-nav>
+<div class="wrapper">
+    <div class="page-header" >
+        <div class="filter"></div>
+        <div class="container h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class=" col-lg-3 col-xl-6 ">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+            </div>
+                <div class="col-md-8 col-lg-8 col-xl-5  mr-auto ml-auto">
+                    <div [ngClass]="{'selected-card':titleSelected === 'title2'}" class="card card-register   mat-elevation-z8">
+                      <br>
+                        <div class="social-line text-center">
+                            <p class="display-6">Enter Login Details</p>
+                        </div>
+                        <form [formGroup]="loginForm" (ngSubmit)="checkLogin()">
+                             <div class="row">
+                                <div class="col-md-10 offset-md-1 col-sd-12">
+                            <label>Contact No.</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                           <i class="">
+                                                       <img src="../../assets/img/phone.svg">
+                                                </i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Contact No." id="contactNo"
+                                       formControlName="contactNo">
+                            </div>
+<br>
+                            <label>PIN  <small>(must be 8characters)</small></label> 
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                   <i class="">
+                                                    <img src="../../assets/img/key.svg">
+                                                </i>
+                                  </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="PIN" id="pin"
+                                       formControlName="pin">
+                            </div>
+                            <br>
+                             <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+                        </div>
+                        <a href="#!" class="text-body">Forgot password?</a>
+                    </div>
+                                                    <!-- <label class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!" class="link-danger">Register</a></label> -->
+                   
+<br>
+<br>
+                            <button class="btn btn-dark btn-block btn-round" type="submit" [disabled]="!loginForm.valid">Login</button>
+                       <br>
+                       
+ <br>
+  <br>
+                        </div>
+                       </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<script src="assets/js/main.js"></script>
+

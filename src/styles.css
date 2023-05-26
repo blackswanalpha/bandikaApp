@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 100%;
+    overflow-y: scroll;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+body::-webkit-scrollbar {
+    width: 0px !important;
+    
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 0px !important;
+    background-color: whitesmoke !important;
+    border-radius: 0px !important;
+}
+
+
+
+.card2 {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-header,
+.card-footer {
+  border-color: #ebeef4;
+  background-color: #fff;
+  color: #798eb3;
+  padding: 15px;
+}
+
+.card-title {
+  padding: 20px 0 15px 0;
+  font-size: 16px;
+  font-weight: 100;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+}
+
+/* .card-title span {
+  color: #899bbd;
+  font-size: 18px;
+  font-weight: 400;
+} */
+
+.card-body {
+  padding: 0 20px 20px 20px;
+}
+
+.card2-img-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.mat-drawer-inner-container::-webkit-scrollbar {
+    display: none;
+}

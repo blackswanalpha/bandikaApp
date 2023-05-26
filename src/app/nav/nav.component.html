@@ -1,0 +1,179 @@
+<mat-toolbar  class=" navbar navbar-static-top bg-white mat-elevation-z3">
+    <button  mat-icon-button *ngIf="sidenav.mode === 'over'&& loginService.isUserLoggedIn() "  (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+             menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+             menu
+        </mat-icon>
+    </button>
+    <h1 class="display-1"><b><span>Milestones</span></b></h1>
+    
+    <form *ngIf="loginService.isUserLoggedIn()" class=" form_container sideCollapse form-inline p-sm ">
+        <div class="input-group ser  mb-3 ">
+
+
+            <!-- <span class=""><i class="fas fa-user fas-lg icon"></i></span> -->
+            <div class="input-group-append">
+                <span class="input-group-text"><mat-icon class="ico">search</mat-icon>
+</span>
+            </div>
+            <input type="search" ngModel name="key" id="searchName floatingInput" class="  form-control des " placeholder="Search Here...">
+        </div>
+    </form>
+    <span class="example-spacer"></span>
+
+     <a mat-button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']">Login</a>
+      <a mat-button *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/signup']">Create Account</a>
+    <button routerLink="/" *ngIf="loginService.isUserLoggedIn()" mat-icon-button aria-label="Example icon-button with a menu">
+ <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" class="mr-1">home</mat-icon> -->
+<i class="">
+                                                    <img src="../../assets/img/home.svg">
+                                                </i>
+
+</button>
+
+
+
+    <!-- <a class="nav-link">
+
+
+        <span matBadge="4" matBadgeOverlap="true"><i class="fas fa-bell"></i></span>
+
+    </a> -->
+
+    <button *ngIf="loginService.isUserLoggedIn()" type="button" class="btn  position-relative">
+  <i class=" "> <img src="../../assets/img/shopping-cart.svg"></i>
+  <span class="position-absolute r">
+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
+
+    <img class="avatar mat-elevation-z3" *ngIf="loginService.isUserLoggedIn()" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" [matMenuTriggerFor]="menu" />
+
+
+
+
+    <button mat-icon-button aria-label="Example icon-button with a menu">
+
+
+</button>
+    <mat-menu #menu="matMenu" yPosition="below">
+        <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+        <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+          <ul class="list-unstyled CTAs">
+            <!-- <li><a href="#" class="download">Download source</a></li> -->
+            <li><a href="/logout" *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']" class="article">logout</a></li>
+        </ul>
+    </mat-menu>
+    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">   <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Music <b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                                <li role="presentation"><a href="#" role="menuitem">Bootdey.com</a></li>
+                                <li role="presentation"><a href="#" role="menuitem">Option 2</a></li>
+                                <li role="presentation"><a href="#" role="menuitem">Option 3</a></li>
+                                <li role="presentation"><a href="#" role="menuitem">New Snippets</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <!--/.nav-collapse -->
+    <!-- </div> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+                <a class="navbar-brand" [routerLink]="['/lecturer']" href="/users">users</a>
+                <a class="navbar-brand" [routerLink]="['/users']" href="/users">users</a>
+                <a class="navbar-brand" routerLink="['/department']" href="/department">department</a>
+            </li>
+        </ul>
+
+    </div>  -->
+
+</mat-toolbar>
+
+<mat-sidenav-container [hasBackdrop]="true">
+    <mat-sidenav   #sidenav="matSidenav" mode="over" class="sidenav mat-elevation-z8" opened>
+
+
+
+        <!-- <img class="avatarimg mat-elevation-z8 " src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+        <h4 class="name">John Smith</h4>
+        <p class="designation">Software Engineer</p>
+
+        <mat-divider></mat-divider> -->
+
+        <button mat-button class="menu-button" routerLink="/">
+      <mat-icon  fontSet="material-icons-round">home</mat-icon>
+      <span>Home</span>
+    </button>
+        <button mat-button class="menu-button" routerLink="/profile">
+      <mat-icon fontSet="material-icons-round">perm_identity</mat-icon>
+      <span>Profile</span>
+    </button>
+        <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon fontSet="material-icons-round">shopping_cart</mat-icon>
+      <span>MyShop</span>
+    </button>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" routerLink="/venue">
+      <mat-icon >library_books</mat-icon>
+      <span>Appointments</span>
+    </button>
+        <button  routerLink="/pricing" mat-button class="menu-button" >
+      <mat-icon> add_box </mat-icon>
+      <span>Create</span>
+    </button>
+        <button mat-button class="menu-button" routerLink="/account">
+      <mat-icon>explore</mat-icon>
+      <span>Explore</span>
+    </button>
+        <button mat-button class="menu-button" routerLink="/venue">
+<mat-icon>chat</mat-icon>
+      <span>Notifications</span>
+    </button>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon fontSet="material-icons-outlined">info</mat-icon>
+      <span>Info</span>
+    </button>
+    
+        <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon fontSet="material-icons-round">settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content bg-white">
+
+
+
+            <router-outlet #outlet="outlet" class="">
+
+            </router-outlet>
+
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<simple-notifications></simple-notifications>
+
+
+<!-- [@triggerName]="prepareRoute(outlet)" -->
